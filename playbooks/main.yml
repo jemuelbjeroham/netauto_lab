@@ -26,7 +26,7 @@
 
     - name: Get the interface stats
       ansible.builtin.include_role:
-        name: interface_stats
+        name: get_interface_stats
 
     - name: Render the interface config report
       ansible.builtin.include_role:
