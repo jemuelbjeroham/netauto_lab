@@ -1,16 +1,16 @@
 ---
 - name: Network Automation in doing ETL using AWS Glue
   hosts: all
-  gather_facts: no
+  gather_facts: false
   tasks:
     - name: Collect logs from the network device
       ansible.builtin.include_role:
         name: collect_logs
-    
+
     - name: Get the backup of the configuration
       ansible.builtin.include_role:
         name: backup_config
-    
+
     - name: Get the interface stats
       ansible.builtin.include_role:
         name: interface_stats
@@ -18,4 +18,3 @@
     - name: Render the interface config report
       ansible.builtin.include_role:
         name: render_interface_report
-
