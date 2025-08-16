@@ -1,6 +1,6 @@
 ---
 - name: Collect system logs
-  ios_command:
+  cisco.ios.ios_command:
     commands: show logging
   register: log_output
 

@@ -1,10 +1,10 @@
 ---
 - name: Backup running-config
-  ios_command:
+  cisco.ios.ios_command:
     commands: show running-config
-  register: config_output
+  register: backup_config_output
 
 - name: Save running config locally
   copy:
-    content: "{{ config_output.stdout[0] }}"
+    content: "{{ backup_config_output.stdout[0] }}"
     dest: "./backups/{{ inventory_hostname }}_running_config.txt"

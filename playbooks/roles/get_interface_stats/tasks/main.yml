@@ -1,5 +1,5 @@
 ---
 - name: Get interface status
-  ios_command:
+  cisco.ios.ios_command:
     commands: show ip interface brief
   register: iface_output
