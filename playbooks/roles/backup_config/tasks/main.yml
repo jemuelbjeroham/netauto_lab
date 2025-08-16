@@ -5,6 +5,6 @@
   register: backup_config_output
 
 - name: Save running config locally
-  copy:
+  ansible.builtin.copy:
     content: "{{ backup_config_output.stdout[0] }}"
     dest: "./backups/{{ inventory_hostname }}_running_config.txt"

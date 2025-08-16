@@ -2,4 +2,4 @@
 - name: Get interface status
   cisco.ios.ios_command:
     commands: show ip interface brief
-  register: iface_output
+  register: get_interface_stats_output

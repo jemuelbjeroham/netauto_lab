@@ -2,9 +2,9 @@
 - name: Collect system logs
   cisco.ios.ios_command:
     commands: show logging
-  register: log_output
+  register: collect_logs_output
 
 - name: Save logs locally
-  copy:
-    content: "{{ log_output.stdout[0] }}"
+  ansible.builtin.copy:
+    content: "{{ collect_logs_output.stdout[0] }}"
     dest: "./logs/{{ inventory_hostname }}_logs.txt"
