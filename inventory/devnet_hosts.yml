@@ -5,4 +5,4 @@ all:
         cisco_devnet:
           ansible_host: devnetsandboxiosxec9k.cisco.com
           ansible_connection: network_cli
-          ansible_network_os: iosxe
+          ansible_network_os: ios
