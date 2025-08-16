@@ -12,7 +12,7 @@ env:
   VAULT_PASSWORD: ${{ secrets.VAULT_PASSWORD }}
 
 jobs:
-  run-ansible:
+  Ansible-Runner:
     runs-on: ubuntu-latest
 
     steps:
