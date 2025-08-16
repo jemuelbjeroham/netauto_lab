@@ -1,2 +1,5 @@
+ansible
+ansible-lint
 boto3
+paramiko
 ansible-pylibssh
