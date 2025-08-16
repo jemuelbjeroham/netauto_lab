@@ -1,0 +1,12 @@
+all:
+  children:
+    switches:
+      hosts:
+        cisco_devnet:
+          ansible_host: devnetsandboxiosxec9k.cisco.com
+          ansible_connection: network_cli
+          ansible_network_os: iosxe
+
+  vars:
+    ansible_user: "{{ ansible_user }}"
+    ansible_password: "{{ ansible_password }}"

@@ -1,0 +1,6 @@
+---
+- name: Render interface report using template
+  template:
+    src: interface_report.j2
+    dest: "./interfaces/{{ inventory_hostname }}_interface_report.txt"
+  when: iface_output is defined and iface_output.stdout is not none

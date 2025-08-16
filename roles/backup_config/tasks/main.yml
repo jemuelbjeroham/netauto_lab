@@ -1,0 +1,10 @@
+---
+- name: Backup running-config
+  ios_command:
+    commands: show running-config
+  register: config_output
+
+- name: Save running config locally
+  copy:
+    content: "{{ config_output.stdout[0] }}"
+    dest: "./backups/{{ inventory_hostname }}_running_config.txt"

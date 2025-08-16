@@ -1,0 +1,10 @@
+---
+- name: Collect system logs
+  ios_command:
+    commands: show logging
+  register: log_output
+
+- name: Save logs locally
+  copy:
+    content: "{{ log_output.stdout[0] }}"
+    dest: "./logs/{{ inventory_hostname }}_logs.txt"

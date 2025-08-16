@@ -1,0 +1,5 @@
+Interface Report for {{ inventory_hostname }}
+
+{% for line in iface_output.stdout[0].splitlines() %}
+{{ line }}
+{% endfor %}

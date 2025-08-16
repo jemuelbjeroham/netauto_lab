@@ -1,0 +1,5 @@
+---
+- name: Get interface status
+  ios_command:
+    commands: show ip interface brief
+  register: iface_output
