@@ -2,6 +2,9 @@
 - name: Network Automation in doing ETL using AWS Glue
   hosts: all
   gather_facts: false
+  vars:
+    ansible_user: "{{ lookup('env', 'ANSIBLE_NET_USERNAME') }}"
+    ansible_password: "{{ lookup('env', 'ANSIBLE_NET_PASSWORD') }}"
   tasks:
     - name: Collect logs from the network device
       ansible.builtin.include_role:

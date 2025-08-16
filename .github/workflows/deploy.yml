@@ -10,6 +10,9 @@ env:
   CLUSTER_NAME: sre-eks-cluster
   AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
   VAULT_PASSWORD: ${{ secrets.VAULT_PASSWORD }}
+  ANSIBLE_NET_USERNAME: ${{ secrets.ANSIBLE_NET_USERNAME }}
+  ANSIBLE_NET_PASSWORD: ${{ secrets.ANSIBLE_NET_PASSWORD }}
+
 
 jobs:
   Ansible-Runner:
@@ -38,10 +41,10 @@ jobs:
           pip install ansible ansible-lint
           ansible-galaxy collection install -r requirements.yml
 
-      - name: Decrypt Ansible Vault file
-        run: |
-          echo "$VAULT_PASSWORD" > .vault_pass
-          ansible-vault decrypt group_vars/vars.yml --vault-password-file .vault_pass
+      # - name: Decrypt Ansible Vault file
+      #   run: |
+      #     echo "$VAULT_PASSWORD" > .vault_pass
+      #     ansible-vault decrypt group_vars/vars.yml --vault-password-file .vault_pass
 
       - name: Run Ansible Lint
         run: |
