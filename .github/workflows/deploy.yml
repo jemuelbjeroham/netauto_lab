@@ -48,6 +48,8 @@ jobs:
           ansible-lint playbooks/ -x risky-file-permissions
 
       - name: Run playbook
+        env:
+          ANSIBLE_SSH_TYPE: paramiko
         run: |
           ansible-playbook playbooks/main.yml
 
