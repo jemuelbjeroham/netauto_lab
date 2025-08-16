@@ -4,18 +4,18 @@
   gather_facts: no
   tasks:
     - name: Collect logs from the network device
-      include_role:
+      ansible.builtin.include_role:
         name: collect_logs
     
     - name: Get the backup of the configuration
-      include_role:
+      ansible.builtin.include_role:
         name: backup_config
     
     - name: Get the interface stats
-      include_role:
+      ansible.builtin.include_role:
         name: interface_stats
 
     - name: Render the interface config report
-      include_role:
+      ansible.builtin.include_role:
         name: render_interface_report
-        
+
