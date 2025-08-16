@@ -4,3 +4,4 @@
     src: interface_report.j2
     dest: "./interfaces/{{ inventory_hostname }}_interface_report.txt"
   when: get_interface_stats_output is defined and get_interface_stats_output.stdout is not none
+  
