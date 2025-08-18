@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+  schedule:
+    - cron: "0 0 * * *"
 
 env:
   AWS_REGION: us-east-1
