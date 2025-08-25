@@ -2,7 +2,7 @@ import os
 import boto3
 
 BUCKET_NAME = "netautomation-logging-dev"
-BASE_FOLDERS = ["./logs", "./backups", "./interfaces"]
+BASE_FOLDERS = ["./logs", "./backups", "./interfaces", "./user_logins"]
 
 def upload_files():
     s3_client = boto3.client("s3")

@@ -1,0 +1,10 @@
+---
+- name: Collect user login information
+  user_logs:
+    logs: "{{ collect_logs_output.stdout[0] }}"
+  register: user_logins_output
+
+- name: Save logs locally
+  ansible.builtin.copy:
+    content: "{{ user_logins_output.logs }}"
+    dest: "./user_logins/{{ inventory_hostname }}_user_logins.json"
