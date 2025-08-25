@@ -24,7 +24,7 @@
     - name: Capture user login information
       ansible.builtin.include_role:
         name: capture_user_logins
-        
+
     - name: Get the backup of the configuration
       ansible.builtin.include_role:
         name: backup_config
