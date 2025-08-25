@@ -34,7 +34,7 @@ def main():
     logs = module.params['logs']
     try:
         user_logins = extract_user_logins(logs)
-        module.exit_json(changed=False, logs=user_logins)
+        module.exit_json(changed=False, logs=json.dumps(user_logins, indent=4))
     except Exception as e:
         module.fail_json(msg=str(e))
 
